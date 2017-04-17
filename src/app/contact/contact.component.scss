@@ -1,0 +1,54 @@
+:host {
+    flex: 1;
+}
+.contact-bg {
+  background-image: url('../../assets/img/contact-phones-bg.jpg');
+  background-position: center center;
+}
+.screen-white-md {
+    align-items: center;
+    background-color: rgba(0, 0, 255, 0.5);
+}
+.contact {
+    display: flex;
+    justify-content: space-around;
+    margin: 3em 0 3em 0;
+    text-align: center;
+    padding: 3em 0 3em 0;
+
+    div {
+        width: 49%;
+
+        input[type=text] {
+            width: 45%;
+            color: #333;
+            margin-bottom: 6px;
+            border: 0;
+            border-bottom: 1px solid #aaa;
+            padding: 6px 6px 0 6px;
+        }
+        
+        textarea {
+            width: 90%;
+            border: 1ps solid #333;
+            color: #333;
+            margin-bottom: 6px;
+            padding: 6px;
+            font-family: inherit;
+        }
+
+        input[type=submit] {
+            width: 85%;
+            background-color: #eee;
+            border: 1px solid #333;
+            padding: 3px;
+            color: #156cbe;
+            transition: all 0.3s ease-in-out;
+        }
+
+        input[type=submit]:hover {
+            background-color: #fff;
+            border: 1px solid #eee;
+        }
+    }
+}
