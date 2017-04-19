@@ -5,9 +5,12 @@ TODO
 
 -write about section
 
--projects section info and pages (child routes)
+-projects section info
+    -update links (angular twitch broken)
+    -reformat cards for consistent height and button placement
 
 -case studies (child routes)
+    -on click of button, show study (animate in) and input/event emit header variable for height
 
 -visuals
     -angular animation on route change (sub route change)

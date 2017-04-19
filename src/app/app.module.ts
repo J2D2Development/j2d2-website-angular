@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-import { CasesComponent } from './cases/cases.component';
+//import { CasesComponent } from './cases/cases.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -19,7 +19,7 @@ import { routing } from './app.routes';
     ProjectsComponent,
     AboutComponent,
     HomeComponent,
-    CasesComponent,
+    //CasesComponent,
     ContactComponent,
     NotFoundComponent
   ],
