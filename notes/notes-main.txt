@@ -1,0 +1,25 @@
+TODO
+-form setup (email backend? - eventually, save in db and send me notification to check admin panel)
+    -styles done, now link it up to send to firebase?  or email to me?  or send to firebase, then notify me!
+    -anti spam (use bothoneypot)
+
+-write about section
+
+-projects section info and pages (child routes)
+
+-case studies (child routes)
+
+-visuals
+    -angular animation on route change (sub route change)
+        -see pluralsight video
+    -link hover slide underline effect (was on twitter, now try http://stackoverflow.com/questions/34028802/transition-sliding-underline-jumping)
+
+-one folder for admin
+    eventually, this will be a login (guards protected) for me to update site and add blog posts, etc.?
+    this would be own module, lazy loaded (wouldn't be needed for majority of visitors, just me).
+
+-simple node server (see qtzl example- really just need to return base route for now, but eventually will need api endpoints if going for custom blog and content editing).
+    -or use firebase?  looks like they have a 'spa' option that just rewrites the routes.  if I use them for db, it would all just be api calls to firebase anyway
+
+hosting: aws? google?
+    -check out firebase:  can have free tier db and hosting?

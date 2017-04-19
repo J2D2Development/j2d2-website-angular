@@ -12,43 +12,66 @@
 .contact {
     display: flex;
     justify-content: space-around;
-    margin: 3em 0 3em 0;
     text-align: center;
-    padding: 3em 0 3em 0;
+    padding: 3em 1em 3em 1em;
 
-    div {
-        width: 49%;
+    .contact-main {
+        width: 65%;
+        min-width: 65%;
+    }
+
+    .contact-side {
+        display: flex;
+        justify-content: space-between;
+
+        input, textarea {
+            width: 90%;
+            min-width: 250px;
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 1em;
+            transition: border 0.3s ease-in-out;
+        }
 
         input[type=text] {
-            width: 45%;
-            color: #333;
-            margin-bottom: 6px;
             border: 0;
             border-bottom: 1px solid #aaa;
-            padding: 6px 6px 0 6px;
+            padding: 16px 16px 0 16px;
+        }
+        input[type=text]:focus {
+            outline: 0;
+            border-bottom: 1px solid #333;
         }
         
         textarea {
-            width: 90%;
-            border: 1ps solid #333;
-            color: #333;
-            margin-bottom: 6px;
-            padding: 6px;
+            border: 1px solid #aaa;
+            padding: 16px;
             font-family: inherit;
         }
-
-        input[type=submit] {
-            width: 85%;
-            background-color: #eee;
+        textarea:focus {
+            outline: 0;
             border: 1px solid #333;
-            padding: 3px;
-            color: #156cbe;
-            transition: all 0.3s ease-in-out;
         }
 
-        input[type=submit]:hover {
-            background-color: #fff;
-            border: 1px solid #eee;
+        .button-group {
+            display: flex;
+            justify-content: center;
         }
+
+        button {
+            width: 35%;
+            min-width: 75px;
+            margin: 0 1em 0 0;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        button:focus {
+            outline: 0;
+        }
+    }
+
+    .contact-minor {
+        flex-direction: column;
+        justify-content: flex-start;
     }
 }

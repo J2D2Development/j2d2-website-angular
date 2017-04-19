@@ -1,4 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+$primary-color: #156cbe;
+$primary-color-accent: #333;
+$comp-color: #be6715;
+
 * {
   box-sizing: border-box;
 }
@@ -16,7 +19,7 @@ body {
   width: 100%;
   font-size: 1.25em;
   padding: 16px 0 16px 0;
-  color: #156cbe;
+  color: $primary-color;
   background-color: #eee;
   position: fixed;
   top: 0;
@@ -27,9 +30,8 @@ body {
 .header {
   z-index: 9999;
   width: 100%;
-  font-size: 1.25em;
   padding: 16px 0 16px 0;
-  color: #156cbe;
+  color: $primary-color;
   background-color: #eee;
   box-shadow: 0 0 6px #333;
 }
@@ -147,13 +149,7 @@ h1 {
   transform: scale(0);
 }
 
-// .work-bg {
-//   margin: 0;
-//   background-image: url(https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?dpr=1.5&auto=format&crop=entropy&fit=crop&w=1500&h=770&q=80&cs=tinysrgb);
-//   background-position: center top;
-//   background-size: cover;
-//   background-attachment: fixed;
-// }
+
 .sub-screen-bg {
   margin: 0;
   background-position: center top;
@@ -267,7 +263,7 @@ hr {
 .subheader {
   display: block;
   font-size: 0.55em;
-  color: #156cbe;
+  color: $primary-color;
 }
 
 .subheader-light {
@@ -284,13 +280,13 @@ hr {
   margin: 16px auto;
   padding: 6px;
   text-align: center;
-  color: #156cbe;
-  border: 1px solid #156cbe;
+  color: $primary-color;
+  border: 1px solid $primary-color;
   transition: all 0.3s ease;
 }
 
 .primary-color--link:hover {
-  background-color: #156cbe;
+  background-color: $primary-color;
   color: #eee;
 }
 
@@ -311,7 +307,23 @@ hr {
 
 .reversed-color--link:hover {
   background-color: #eee;
-  color: #156cbe;
+  color: $primary-color;
+}
+
+.warning-color--link {
+  display: inline-block;
+  text-decoration: none;
+  margin: 16px auto;
+  padding: 6px;
+  text-align: center;
+  color: $comp-color;
+  border: 1px solid $comp-color;
+  transition: all 0.3s ease;
+}
+
+.warning-color--link:hover {
+  background-color: $comp-color;
+  color: #eee;
 }
 
 #header-one {
@@ -325,6 +337,14 @@ hr {
 
 .mobile-menu-wrapper {
   display: none;
+}
+
+.muted {
+    font-size: 0.8em;
+    font-style: italic;
+}
+.text-left {
+    text-align: left;
 }
 
 
