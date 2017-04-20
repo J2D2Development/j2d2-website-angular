@@ -54,16 +54,16 @@
         }
 
         .button-group {
+            margin-left: 5%;
             display: flex;
-            justify-content: center;
         }
 
         button {
-            width: 35%;
             min-width: 75px;
             margin: 0 1em 0 0;
             cursor: pointer;
             border-radius: 3px;
+            font-size: 1.1em;
         }
         button:focus {
             outline: 0;

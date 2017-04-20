@@ -4,6 +4,9 @@
 /dist
 /tmp
 
+# firebase
+/functions/node_modules
+
 # dependencies
 /node_modules
 

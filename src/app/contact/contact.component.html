@@ -11,13 +11,19 @@
 
 <div class="contact">
     <div class="contact-side contact-main">
-      <form>
-        <input type="text" placeholder="Your Name" />
-        <input type="text" placeholder="Your Email" />
-        <textarea placeholder="What's on your mind?"></textarea>
+      <form [formGroup]="contactForm" (ngSubmit)="submitForm(contactForm.value)" novalidate>
+        <input type="text" placeholder="Your Name" formControlName="name" />
+        <input type="text" placeholder="Your Email" formControlName="email" />
+        <textarea placeholder="What's on your mind?" formControlName="content"></textarea>
         <div class="button-group">
-          <button type="submit" class="primary-color--link">Submit</button>
-          <button type="button" class="warning-color--link">Clear</button>
+          <button type="submit" class="primary-color--link">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;
+            Submit
+          </button>
+          <button type="button" class="warning-color--link" (click)="clearForm()">
+            <i class="fa fa-ban" aria-hidden="true"></i>&nbsp;
+            Clear
+          </button>
         </div>
       </form>
     </div>

@@ -1,7 +1,9 @@
 TODO
--form setup (email backend? - eventually, save in db and send me notification to check admin panel)
-    -styles done, now link it up to send to firebase?  or email to me?  or send to firebase, then notify me!
+-form setup
     -anti spam (use bothoneypot)
+    -angularfire- form submissions saved in db. set up function (on firebase?) to notify me via email.
+    -set 'view' on this to require login, but 'write' to not (anyone can submit form, only I can view)
+    -http://blog.angular-university.io/angular-2-firebase/
 
 -write about section
 
@@ -18,11 +20,6 @@ TODO
     -link hover slide underline effect (was on twitter, now try http://stackoverflow.com/questions/34028802/transition-sliding-underline-jumping)
 
 -one folder for admin
+    -set up subscription using angularfire to view existing form_submissions, add notes, delete, etc.
     eventually, this will be a login (guards protected) for me to update site and add blog posts, etc.?
     this would be own module, lazy loaded (wouldn't be needed for majority of visitors, just me).
-
--simple node server (see qtzl example- really just need to return base route for now, but eventually will need api endpoints if going for custom blog and content editing).
-    -or use firebase?  looks like they have a 'spa' option that just rewrites the routes.  if I use them for db, it would all just be api calls to firebase anyway
-
-hosting: aws? google?
-    -check out firebase:  can have free tier db and hosting?
