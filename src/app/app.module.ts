@@ -11,16 +11,17 @@ import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { AngularFireModule } from 'angularfire2';
+import { ENV_VARS } from '../config';
 
 import { routing } from './app.routes';
 
 export const firebaseConfig = {
-    apiKey: 'AIzaSyDENNNekUe7gTs-Wu5e8fWoOl_4HsgFNG0',
+    apiKey: ENV_VARS.api_key,
     authDomain: 'j2d2-website-angular.firebaseapp.com',
     databaseURL: 'https://j2d2-website-angular.firebaseio.com',
     projectId: 'j2d2-website-angular',
     storageBucket: 'j2d2-website-angular.appspot.com',
-    messagingSenderId: '760581361681'
+    messagingSenderId: ENV_VARS.messagingSenderId
   };
 
 @NgModule({

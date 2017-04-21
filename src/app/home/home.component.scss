@@ -3,3 +3,36 @@
     flex-direction: column;
     flex: 1;
 }
+.hero-left {
+    width: 45%;
+
+    i {
+        font-size: 3em;
+        margin: 0 6px 0 6px;
+    }
+
+    .text-wrapper {
+        padding: 2em;
+        background-color: rgba(0,0,0,0.4);
+        border-radius: 5px;
+    }
+}
+
+.hero-right {
+    font-size: 3.5em;
+
+    small {
+        display: block;
+        font-size: 0.5em;
+    }
+
+    span {
+        cursor: pointer;
+        padding: 6px 12px;
+        border-radius: 5px;
+        background-color: rgba(0,0,0,0.4);
+    }
+    span:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+}
