@@ -5,6 +5,8 @@
 }
 .hero-left {
     width: 45%;
+    min-height: 200px;
+    position: relative;
 
     i {
         font-size: 3em;
@@ -15,6 +17,8 @@
         padding: 2em;
         background-color: rgba(0,0,0,0.4);
         border-radius: 5px;
+        position: absolute;
+        top: 0;
     }
 }
 
