@@ -1,3 +1,41 @@
-<p>
-  about works!
-</p>
+<h1 class="sub-screen-bg work-bg">
+    <div class="screen-white-md">
+    <div id="header-two-text">
+        About Me
+        <small class="subheader subheader-light">Examples of projects currently live in production</small>
+    </div>
+    </div>
+</h1>
+<div class="text-wrapper about">
+  <div class="about-p">
+    I started writing code like many do- as a side project.  I was working customer service and a client had a website that needed some minor updates.  It was a “Dreamweaver site”, they told me.  I had no idea what that meant, but I nodded my head and took the job.  After a couple days trying to figure out how to adjust margins in Dreamweaver, I found the “source code” view and was hooked.  These funny symbols and brackets and commands could make the site do just about anything I wanted!
+  </div>
+
+  <div class="about-p">
+    Eventually, I learned enough to take on a junior developer role at the same company I was working customer service- squashing bugs and implementing minor upgrades to a PHP/MySQL based CMS.  It also involved a good deal of Javascript/jQuery/CSS- I was working on both ends of the project and really liking the different aspects of each.  There was the relatively no-nonsense allure of the backend- save the data properly, then return that data to your frontend when it’s requested.  Then there was the Wild West of the frontend, where Javascript was town Mayor, but sherrif jQuery worked hard to keep him in line.  It was all interesting and provided endless opportunities to expand my skill set.
+  </div>
+
+  <div class="about-p row">
+    <div class="col-sm-6 col-xs-12">
+      There were some tough parts.  Trying to implement a rudimentary JSON return structure in PHP4 when we added a pseudo single page app feature to our product.  Doing AJAX-based real time validation (not super difficult) on a client created form where you would not know the contents of the HTML when writing your validation code (a bit trickier).  However, each time I found the answer was a great boost, and made me hungry to find a better solution.
+    </div>
+    <div class="img-flow col-sm-6 col-xs-12">
+      <code [innerText]="badCodeSnippet"></code>
+      <div class="caption">
+        This is a simple example of my manually encoded JSON returned by PHP.  A tangled forest of single quotes and double quotes and brackets- and this is just to return a couple variables.
+      </div>
+    </div>
+  </div>
+
+  <div class="about-p">
+    Lately, I’ve been working with some more modern frameworks- namely Angular (it’s just Angular now) and .NET core, but I still love the basics.  Knowing Javascript well really helps when working with a latest-and-greatest framework like Angular or React.  The framework takes care of a lot of the tough parts, but sometimes you need to know how it’s all working to make it do exactly what you want.  And getting to know the strict landscape of a typed language like C# has also been quite fun.  It’s an interesting contrast to the ‘anything goes’ approach of Javascript- 2 ways to get to the same end product: a really cool online experience for your customers!
+  </div>
+
+  <div class="about-p">
+    Current programming obsessions include: Single Page Applications, Typescript, D3.js, finding the best/most efficient answer- not just the first answer that works, and the readability and extensibility of my code.
+  </div>
+
+  <div class="about-p">
+    Questions?  <a routerLink="/contact">Contact me!</a>
+  </div>
+</div>

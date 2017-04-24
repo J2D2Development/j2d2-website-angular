@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  badCodeSnippet: string = `print '{"enabled": "' . $result_profiles['profiles_enabled'] . '", "position": "' . $result_profiles['profile_position'] . '"}'; `;
 
   constructor() { }
 
