@@ -171,6 +171,9 @@ h1 {
 }
 
 .featured-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 30%;
   box-shadow: 5px 10px 6px -6px #777;
   padding: 6px 12px 6px 12px;
@@ -201,6 +204,7 @@ h1 {
 
 .featured-col--text {
   font-size: 0.85em;
+  flex: 1;
 }
 
 .footer-dark {

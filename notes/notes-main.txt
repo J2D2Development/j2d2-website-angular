@@ -1,5 +1,5 @@
 TODO
--RESET FIREBASE API KEY
+-firebase: leave 'write' as open (for form submissions only), but read as admins only (set up account for me!)
 
 -form setup
     -anti spam (use bothoneypot)
@@ -7,11 +7,10 @@ TODO
     -set 'view' on this to require login, but 'write' to not (anyone can submit form, only I can view)
     -http://blog.angular-university.io/angular-2-firebase/
 
--write about section
+-review/revise about section
 
 -projects section info
     -update links (angular twitch broken)
-    -reformat cards for consistent height and button placement
 
 -case studies (child routes)
     -on click of button, show study (animate in) and input/event emit header variable for height
