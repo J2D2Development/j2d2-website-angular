@@ -7,16 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CasesComponent implements OnInit {
   alterHeader: string = '';
+  alterSidebar: string = '';
+  hideDetails: string = '';
 
   constructor() { }
 
   ngOnInit() {
-    //TODO remove this, change to input/event emitter between this and child component instead of timeout
-    console.log('before:', this.alterHeader);
-      setTimeout(() => {
-        this.alterHeader = 'alter-header';
-        console.log('after:', this.alterHeader);
-      }, 5000);
+    this.updateUI(true);
   }
 
+  updateUI(revert?: boolean) {
+    if(revert) {
+      this.alterHeader = '';
+      this.alterSidebar = '';
+      this.hideDetails = '';
+    } else {
+      this.alterHeader = 'alter-header';
+      this.alterSidebar = 'alter-sidebar';
+      this.hideDetails = 'hide-details';
+    }
+  }
 }

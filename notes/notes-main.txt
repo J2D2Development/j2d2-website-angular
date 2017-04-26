@@ -1,5 +1,4 @@
 TODO
--firebase: leave 'write' as open (for form submissions only), but read as admins only (set up account for me!)
 
 -form setup
     -anti spam (use bothoneypot)
@@ -9,11 +8,14 @@ TODO
 
 -review/revise about section
 
+-MOBILE FRIENDLY
+
 -projects section info
-    -update links (angular twitch broken)
+    -update links (angular twitch broken- fix it or link a different project)
 
 -case studies (child routes)
     -on click of button, show study (animate in) and input/event emit header variable for height
+    -using css transitions, looks like complete shit.  forget for now- write case study content instead
 
 -visuals
     -angular animation on route change (sub route change)

@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  template: '<h2>Case one</h2>'
+  templateUrl: './sub-component-templates/caseone.html'
 })
 export class CaseOneComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  update() {
+    console.log('pass');
   }
 
 }
