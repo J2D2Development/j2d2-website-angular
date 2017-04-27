@@ -13,18 +13,18 @@ export class CasesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.updateUI(true);
+    //this.updateUI(true);
   }
 
   updateUI(revert?: boolean) {
-    if(revert) {
-      this.alterHeader = '';
-      this.alterSidebar = '';
-      this.hideDetails = '';
-    } else {
-      this.alterHeader = 'alter-header';
-      this.alterSidebar = 'alter-sidebar';
-      this.hideDetails = 'hide-details';
-    }
+    // if(revert) {
+    //   this.alterHeader = '';
+    //   this.alterSidebar = '';
+    //   this.hideDetails = '';
+    // } else {
+    //   this.alterHeader = 'alter-header';
+    //   this.alterSidebar = 'alter-sidebar';
+    //   this.hideDetails = 'hide-details';
+    // }
   }
 }

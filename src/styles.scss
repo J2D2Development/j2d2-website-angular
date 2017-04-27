@@ -14,6 +14,66 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+/*GRID SYSTEM*/
+//experiment with css-grid.  if works, move to main style and make responsive
+.container {
+    margin: 0px auto;
+    padding: 0 1em 0 1em;
+}
+.about-p {
+  margin-bottom: 2em;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 16px;
+}
+
+.col-xs-12 {
+    grid-column: span 12;
+}
+
+.col-sm-3 {
+    grid-column: span 3;
+}
+.col-sm-4 {
+    grid-column: span 4;
+}
+.col-sm-5 {
+    grid-column: span 5;
+}
+.col-sm-6 {
+    grid-column: span 6;
+}
+.col-sm-7 {
+    grid-column: span 7;
+}
+.col-sm-8 {
+    grid-column: span 8;
+}
+.col-sm-9 {
+    grid-column: span 9;
+}
+.col-sm-12 {
+    grid-column: span 12;
+}
+
+.img-flow {
+    padding: 16px;
+    margin: 0 16px 0 16px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.caption {
+    font-size: 0.75em;
+    font-style: italic;
+    margin-top: 12px;
+}
+
 .header-sticky {
   z-index: 9999;
   width: 100%;
@@ -344,6 +404,12 @@ hr {
 }
 .active-button-primary {
   background-color: #333;
+}
+code {
+  background-color: #333;
+  color: palegoldenrod;
+  padding: 1em;
+  border-radius: 5px;
 }
 
 

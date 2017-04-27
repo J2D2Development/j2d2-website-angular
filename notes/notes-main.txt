@@ -1,5 +1,7 @@
 TODO
 
+-wedding website as example: fix comments section?
+
 -form setup
     -anti spam (use bothoneypot)
     -angularfire- form submissions saved in db. set up function (on firebase?) to notify me via email.

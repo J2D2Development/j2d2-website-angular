@@ -10,50 +10,44 @@
 
 <div class="featured {{alterSidebar}}">
     <div class="featured-col">
-        <div class="cases-header">
-            <h2>
-                Case Study 1
-                <small>The MEAN Stack</small>
-            </h2>
-            <div class="primary-color--link--wrapper">
-                <a class="primary-color--link" routerLink="one" routerLinkActive="active-button-primary" (click)="updateUI()">Learn More</a>
-                <a routerLink="/cases" (click)="updateUI(true)">Revert</a>
-            </div>
-        </div>
+        <h2>
+            <i class="devicon-angularjs-plain"></i>
+            Case Study 1
+            <small>The MEAN Stack</small>
+        </h2>
         <div class="featured-col--text {{hideDetails}}">
             I was assigned the task to create a backend for an internal marketing site with an Angular frontend. Given the freedom to pick the backend, I went with NodeJS and MongoDB.
         </div>
+        <div class="primary-color--link--wrapper">
+            <a class="primary-color--link" routerLink="one" routerLinkActive="active-button-primary" (click)="updateUI()">Learn More</a>
+        </div>
     </div>
 
     <div class="featured-col">
-        <div class="cases-header">
-            <h2>
-                Case Study 2
-                <small>Javascript | jQuery</small>
-            </h2>
-            <div class="primary-color--link--wrapper">
-                <a class="primary-color--link" routerLink="two" routerLinkActive="active-button-primary" (click)="updateUI()">Learn More</a>
-                <a routerLink="/cases" (click)="updateUI(true)">Revert</a>
-            </div>
-        </div>
+        <h2>
+            <i class="devicon-jquery-plain"></i>
+            Case Study 2
+            <small>Javascript | jQuery</small>
+        </h2>
         <div class="featured-col--text {{hideDetails}}">
-            The online forms feature needed a refresh. The system was a bit outdated, so I went with a simple approch: jQuery to show real-time validation and ajax to submit the form.
+            There are many great options for creating your own wedding website.  I wanted to do it fully on my own, from the ground up.  The site was built before I really got into Angular/React, so it's just a JS/jQuery front end with a PHP backend and a bit of hackery to submit RSVPs directly to a Google spreadsheet.
+        </div>
+        <div class="primary-color--link--wrapper">
+            <a class="primary-color--link" routerLink="two" routerLinkActive="active-button-primary" (click)="updateUI()">Learn More</a>
         </div>
     </div>
 
     <div class="featured-col">
-        <div class="cases-header">
-            <h2>
-                Case Study 3
-                <small>Python / Django</small>
-            </h2>
-            <div class="primary-color--link--wrapper">
-                <a class="primary-color--link" routerLink="three" routerLinkActive="active-button-primary" (click)="updateUI()">Learn More</a>
-                <a routerLink="/cases" (click)="updateUI(true)">Revert</a>
-            </div>
-        </div>
+        <h2>
+            <i class="devicon-python-plain"></i>
+            Case Study 3
+            <small>Python | Django</small>
+        </h2>
         <div class="featured-col--text {{hideDetails}}">
             The website was to be built in Angular 1.5 with a Python/Django backend. I got to work on both- helping with the routing and multiple modules on the front end, and creating the back end structure.
+        </div>
+        <div class="primary-color--link--wrapper">
+            <a class="primary-color--link" routerLink="three" routerLinkActive="active-button-primary" (click)="updateUI()">Learn More</a>
         </div>
     </div>
 </div>
