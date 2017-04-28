@@ -68,6 +68,9 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+.img-flow-lg {
+  width: 95%;
+}
 .caption {
     font-size: 0.75em;
     font-style: italic;
@@ -296,12 +299,19 @@ h1 {
   color: #eee;
   font-size: 1.5em;
   padding: 0 9px 6px 9px;
-  border-bottom: 1px solid #333;
-  transition: border-bottom 0.5s ease;
+  transition: color 0.2s ease;
 }
-
-.footer-right i:hover {
-  border-bottom: 1px solid #eee;
+.fa-github:hover {
+  color: #6cc644;
+}
+.fa-codepen:hover {
+  color: #76daff;
+}
+.fa-wordpress:hover {
+  color: #21759b;
+}
+.fa-linkedin:hover {
+  color: #0077b5;
 }
 
 .footer-right a {
