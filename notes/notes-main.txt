@@ -12,9 +12,6 @@ TODO
 
 -MOBILE FRIENDLY
 
--projects section info
-    -update links (angular twitch broken- fix it or link a different project)
-
 -case studies (child routes)
     -on click of button, show study (animate in) and input/event emit header variable for height
     -using css transitions, looks like complete shit.  forget for now- write case study content instead
@@ -28,3 +25,19 @@ TODO
     -set up subscription using angularfire to view existing form_submissions, add notes, delete, etc.
     eventually, this will be a login (guards protected) for me to update site and add blog posts, etc.?
     this would be own module, lazy loaded (wouldn't be needed for majority of visitors, just me).
+
+
+TIPS/TRICKS
+
+-git merge branch to master and push to remote:
+    git checkout master
+    git pull origin master
+    git merge test
+    git push origin master
+
+
+LEARNING
+
+https://12factor.net/port-binding
+
+https://github.com/ryanmcdermott/clean-code-javascript
