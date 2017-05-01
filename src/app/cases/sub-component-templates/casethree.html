@@ -1,1 +1,64 @@
-<h1>Case Three!</h1>
+<div class="container">
+    <h1>The Integration Project</h1>
+    <div class="about-p row">
+        <div class="col-sm-12 col-xs-12">
+            My first project at a new company was to investigate using Django as a backend for a redesign of the main corporate website.  The frontend work was already underway- it would use Angular v1.5.  My job would be to start with the old Django standby- a simple blog that we would eventually use as the company's official version.  Then try to integrate Django's awesome built in admin interface to use with sales requests/form submissions.  
+        </div>
+    </div>
+    <div class="about-p row">
+        <div class="col-sm-12 col-xs-12">
+            It wasn't my first experience with Angular 1.5 or Django.  I'd built a simple single page app with Angular in the past- a refresh of my previous employer's documentation site.  I didn't have any official projects up and running with Django, but I had done the usual learning tasks (check the docs, build the basics from the tutorial, etc) and liked the setup.  
+        </div>
+    </div>
+    <div class="about-p row">
+        <div class="col-sm-12 col-xs-12">
+            However, it was my first experience integrating those two technologies together.  It took some learning on my part- and there are definitely still improvements that can be made.  Angular and Django are both web application frameworks.  Both include abstractions for routing- how should we make them play nice together?  The best answer would probably have been to use Django to create API routes just for returning data and using Angular for the actual routing as a whole (and this notion would be used on a later project).  But I didn't think of that at the time, so we created "partials"- html snippet files stored in the Django project's templates folder that were then referenced in the views.py file.  The side benefit of this was that it only took one route on the Django side to return the partial endpoint- and the rest would be handled by Angular's router.
+        </div>
+        <div class="img-flow img-flow-lg col-sm-12 col-xs-12">
+            <code [innerHTML]="endpointExample"></code>
+            <div class="caption">A few basic routes from views.py.  The "endpoint" route returns our partial- the content with Angular driven content.</div>
+        </div>
+    </div>
+    <div class="about-p row">
+        <div class="col-sm-12 col-xs-12">
+            The downside was that this required some extra checking in our Angular routing- which quickly became a bit of a mess.  Our path variables became complicated- so a "checkRoute" function was inserted in the angular.config function.  It would receive the current parameter and a "level".  Then it would loop through any legitimate existing endpoints at each level- if it finds a match, it would go to the backend route and get the content.  If not, it would give back the 404.  Again- not the most elegent solution, but it was our team's first large scale Angular app, and this solution worked.  Sometimes "it works" is the best answer until there's time to go back and find a better one.  I know- there is an "otherwise" route on the Angular router that should handle this, but it didn't seem to work well with SEO.  The router was recognizing everything the bot passed as a test url as legit, so we were ending up with non-existent pages getting indexed.
+        </div>
+        <div class="img-flow img-flow-lg col-sm-12 col-xs-12">
+            <code [innerHTML]="checkrouteExample"></code>
+            <div class="caption">Simplified example of the checkRoute function.  Checks the incoming path against legitimate options- returns true if match (proceed with backend call), false if not (return 404 view)</div>
+        </div>
+    </div>
+    <div class="about-p row">
+        <div class="col-sm-12 col-xs-12">
+            This project did end up with some cool solutions to unexpected problems- it wasn't all "it works, good enough for now" type solutions.  The homepage was designed with a product selection feature- the heart of the single page app aspect of the site.  A visitor could choose their product category, then a sub category, then the specific product (or search throught them all).  These would be lists that update/filter based on the users's selections.  When they click to get a specific product's details, the final route would kick in and take them away from the general selection feature and into a more full screen detailed view.  The design team decided that some aspects of the site would be hidden on that detailed view: the top slideshow, the "about our clients" section, and the "about us" section.  However, the main header should remain- giving users a quick way back to any of that info.  So- how to make those header links stay active when the content they linked to was removed on the detail view?
+        </div>
+    </div>
+    <div class="about-p row">
+        <div class="col-sm-12 col-xs-12">
+            We decided on a "DetailMenuService" factory.  This was fun to create- I was able to implement a cool revealing module type pattern.  The service had a small object to track what was displayed.  Then methods to check and update that object's properties.  When a user clicked on a header link, the service would check the data object- if it wasn't being displayed, the service toggled that option to true and the user would see the info.  This all happened fast enough that you couldn't tell that the content wasn't there a millisecond ago.  It allowed for more vertical space for the detailed product info, but avoided the confusion of having "dead" links in the header.
+        </div>
+        <div class="img-flow img-flow-lg col-sm-12 col-xs-12">
+            <code [innerHTML]="moduleFactoryExample"></code>
+            <div class="caption">The data object tracks which elements of the application are being hidden.  If a menu link to one of these elements is clicked, we can call checkHidden- if false, we setHidden that eleemnt.  "rehide" resets all to hidden (called when a details route is first clicked, or you go 'back' to one).</div>
+        </div>
+    </div>
+    <div class="about-p row">
+        <div class="col-sm-12 col-xs-12">
+            One more fun and unexpected aspect of this project involved SEO- search engine optimization.  My expertise with this was a bit old at the time- I still though in terms of title and meta tags and link back networks.  With a single page app, it seemed like the most important part was getting the crawler bots to recognize your page as having actual content- and not just a little html and a couple script tags and a whole lot of nothing else (until Angular did its magic and loaded the cotnent).  Another part of SEO was making sure all the old links redirected to the proper new url.  This can be done on the server itself, but it can also be done in your Django views.py file.  That way, you can include a little more logic- reducing the number of rewrites you have to make (and reducing the number of possible mistakes).
+        </div>
+        <div class="img-flow img-flow-lg col-sm-12 col-xs-12">
+            <code [innerHTML]="redirectExample"></code>
+            <div class="caption">A simple redirect in views.py.  This one only handles two old routes, but some took care of up to 12.  It was a (relatively) easy way to map old urls to the new Angular driven ones and maintain searchability on those old routes.</div>
+        </div>
+    </div>
+    <div class="about-p row">
+        <div class="col-sm-12 col-xs-12">
+            This project is currently undergoing another rewrite.  That's the thing about software- it's never really "done".  In this case, we are updating to latest generation Angular (which I'm loving) and turning our cobbled together Django backend into a more API driven architecture.  This should address the main issues with the current site- load times and maintainability.  Latest gen Angular has really improved the process of packaging an application for production.  And our team has learned a lot about integrating Django with Angular- which should mean we can rewrite a lot of those "clever" solutions to something a lot more simple and easy to update/maintain.
+        </div>
+    </div>
+    <div class="about-p row">
+        <div class="col-sm-12 col-xs-12">
+            The current version can be found at <a href="http://www.mimics.com" target="_blank">mimics.com</a> - new version coming soon!
+        </div>
+    </div>
+</div>

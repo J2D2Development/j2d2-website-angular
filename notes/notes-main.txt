@@ -2,6 +2,8 @@ TODO
 
 -wedding website as example: fix comments section?
 
+-add link to resume (also; write resume)
+
 -form setup
     -anti spam (use bothoneypot)
     -angularfire- form submissions saved in db. set up function (on firebase?) to notify me via email.
@@ -14,7 +16,7 @@ TODO
 
 -case studies (child routes)
     -on click of button, show study (animate in) and input/event emit header variable for height
-    -using css transitions, looks like complete shit.  forget for now- write case study content instead
+    -review/revise content
 
 -visuals
     -angular animation on route change (sub route change)
