@@ -1,12 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { fader } from '../utilities/router.animations';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  animations: [ fader() ],
+  host: {
+    '[@fader]': 'state'
+  }
 })
 export class ContactComponent implements OnInit {
   public contactForm: FormGroup;
@@ -19,7 +24,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.existingForms$ = this.af.database.list('form_submissions');
-    this.existingForms$.forEach(d => console.log(d));
+    //this.existingForms$.forEach(d => console.log(d));
 
     this.contactForm = this.formBuilder.group({
       'name': ['', Validators.required],

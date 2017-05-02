@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { fader } from '../utilities/router.animations';
 
 @Component({
   selector: 'app-cases',
   templateUrl: './cases.component.html',
-  styleUrls: ['./cases.component.scss']
+  styleUrls: ['./cases.component.scss'],
+  animations: [ fader() ],
+  host: {
+    '[@fader]': 'state'
+  }
 })
 export class CasesComponent implements OnInit {
   alterHeader: string = '';

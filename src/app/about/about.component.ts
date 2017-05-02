@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { fader } from '../utilities/router.animations';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  animations: [ fader() ],
+  host: {
+    '[@fader]': 'state'
+  }
 })
 export class AboutComponent implements OnInit {
   firstjQuerySnippet: string = `$(document).ready(function() {<br />
