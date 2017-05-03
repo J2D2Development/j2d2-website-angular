@@ -12,9 +12,18 @@
 <div class="contact">
     <div class="contact-side contact-main">
       <form [formGroup]="contactForm" (ngSubmit)="submitForm(contactForm.value)" novalidate>
-        <input type="text" placeholder="Your Name" formControlName="name" />
-        <input type="text" placeholder="Your Email" formControlName="email" />
-        <textarea placeholder="What's on your mind?" formControlName="content"></textarea>
+        <div class="input-group">
+          <input type="text" placeholder="Your Name" formControlName="name" />
+          <div class="error-msg" *ngIf="(submitted && !contactForm.controls.name.valid)">Please enter your name</div>
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Your Email" formControlName="email" />
+          <div class="error-msg" *ngIf="(submitted && !contactForm.controls.email.valid)">Please enter valid email</div>
+        </div>
+        <div class="input-group">
+          <textarea placeholder="What's on your mind?" formControlName="content"></textarea>
+          <div class="error-msg" *ngIf="(submitted && !contactForm.controls.content.valid)">Please enter some info</div>
+        </div>
         <div class="button-group">
           <button type="submit" class="primary-color--link">
             <i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;

@@ -326,6 +326,18 @@ hr {
   width: 30%;
 }
 
+.error-msg {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  color: $comp-color;
+  padding: 3px;
+  font-size: 0.85em;
+}
+.error-field {
+  border-color: $comp-color;
+}
+
 .subheader {
   display: block;
   font-size: 0.55em;

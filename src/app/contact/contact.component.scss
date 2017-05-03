@@ -9,6 +9,9 @@
     align-items: center;
     background-color: rgba(0, 0, 255, 0.5);
 }
+form {
+    min-width: 100%;
+}
 .contact {
     display: flex;
     justify-content: space-around;
@@ -24,12 +27,17 @@
         display: flex;
         justify-content: space-between;
 
-        input, textarea {
+        .input-group {
+            position: relative;
             width: 90%;
             min-width: 250px;
+            margin-bottom: 1em;
+        }
+
+        input, textarea {
+            width: 90%;
             font-size: 1.5em;
             color: #333;
-            margin-bottom: 1em;
             transition: border 0.3s ease-in-out;
         }
 

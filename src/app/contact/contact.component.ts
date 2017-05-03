@@ -16,6 +16,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class ContactComponent implements OnInit {
   public contactForm: FormGroup;
   public existingForms$: FirebaseListObservable<Object[]>;
+  public submitted: boolean = false;
 
   constructor(
     public af: AngularFire,
@@ -34,6 +35,8 @@ export class ContactComponent implements OnInit {
   }
 
   submitForm(data) {
+    this.submitted = true;
+
     if(this.contactForm.valid) {
       const timestamp = new Date().getTime();
       this.existingForms$.push({
@@ -42,12 +45,14 @@ export class ContactComponent implements OnInit {
         content: data['content'],
         timestamp
       });
+      this.clearForm();
     } else {
       console.log('invalid form:', this.contactForm);
     }
   }
 
   clearForm() {
+    this.submitted = false;
     this.contactForm.reset();
   }
 
