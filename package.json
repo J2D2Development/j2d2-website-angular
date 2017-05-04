@@ -5,6 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "build": "ng build --prod --aot",
+    "deploy": "ng build --prod --aot && firebase deploy",
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",
@@ -29,6 +30,7 @@
     "d3": "^4.8.0",
     "devicon": "^2.0.0",
     "firebase": "^3.8.0",
+    "nodemailer": "^4.0.1",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
     "typescript": "^2.2.2",

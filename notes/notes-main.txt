@@ -11,7 +11,6 @@ TODO
         investigate: firebase backend data validation?  maybe on:
             functions.database.ref('/form_submissions').onWrite(event
             -is there a 'beforeWrite' hook?  if so, try putting validators there and rejecting if bad submission
-    -angularfire- form submissions saved in db. set up function (on firebase?) to notify me via email.
     -set 'view' on this to require login, but 'write' to not (anyone can submit form, only I can view)
     -http://blog.angular-university.io/angular-2-firebase/
 

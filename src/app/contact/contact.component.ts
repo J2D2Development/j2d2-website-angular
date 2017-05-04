@@ -44,8 +44,12 @@ export class ContactComponent implements OnInit {
         email: data['email'],
         content: data['content'],
         timestamp
-      });
-      this.clearForm();
+      })
+      .then(response => {
+        console.log('submission success: show notice at this point with reset button');
+        this.clearForm();
+      })
+      .catch(error => console.log('error submitting form'));
     } else {
       console.log('invalid form:', this.contactForm);
     }
