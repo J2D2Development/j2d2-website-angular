@@ -1,5 +1,8 @@
 TODO
 
+JOB 1:
+    finish contact form confirmation msg formatting!!!
+
 -wedding website as example: fix comments section?
     -mysql gone?  try reinstalling?
 
