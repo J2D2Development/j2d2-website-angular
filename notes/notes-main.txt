@@ -1,16 +1,16 @@
 TODO
 
 -wedding website as example: fix comments section?
+    -mysql gone?  try reinstalling?
 
 -add link to resume (also; write resume)
 
 -form setup
-    -anti spam (use bothoneypot)
     -validations:
-        finish frontend (nicer layout- mobile!)
         investigate: firebase backend data validation?  maybe on:
             functions.database.ref('/form_submissions').onWrite(event
             -is there a 'beforeWrite' hook?  if so, try putting validators there and rejecting if bad submission
+            -fe validation for spam honeypot does nothing (bots can just override js).  need backend check on the checkbox!
     -set 'view' on this to require login, but 'write' to not (anyone can submit form, only I can view)
     -http://blog.angular-university.io/angular-2-firebase/
 
@@ -23,8 +23,6 @@ TODO
     -review/revise content
 
 -visuals
-    -angular animation on route change (sub route change)
-        -see pluralsight video
     -link hover slide underline effect (was on twitter, now try http://stackoverflow.com/questions/34028802/transition-sliding-underline-jumping)
 
 -one folder for admin

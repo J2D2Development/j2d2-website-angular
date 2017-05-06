@@ -11,18 +11,36 @@
 
 <div class="contact">
     <div class="contact-side contact-main">
-      <form [formGroup]="contactForm" (ngSubmit)="submitForm(contactForm.value)" novalidate>
+      <div *ngIf="showConfirmation" class="form-submitted" [@fader]="true">
+        <h2>Thanks for submitting, {{contactForm.controls.name.value}}!</h2>
+        <div>I'll be in touch soon</div>
+        <button type="button" class="primary-color--link" (click)="clearForm()">Reset</button>
+      </div>
+      <form [formGroup]="contactForm" 
+        (ngSubmit)="submitForm(contactForm.value)">
         <div class="input-group">
           <input type="text" placeholder="Your Name" formControlName="name" />
-          <div class="error-msg" *ngIf="(submitted && !contactForm.controls.name.valid)">Please enter your name</div>
+          <div class="error-msg" *ngIf="(submitted && !contactForm.controls.name.valid)" [@slide-in]="true">
+            Please enter your name
+          </div>
         </div>
         <div class="input-group">
           <input type="text" placeholder="Your Email" formControlName="email" />
-          <div class="error-msg" *ngIf="(submitted && !contactForm.controls.email.valid)">Please enter valid email</div>
+          <div class="error-msg" *ngIf="(submitted && !contactForm.controls.email.valid)" [@slide-in]="true">
+            Please enter valid email
+          </div>
         </div>
         <div class="input-group">
           <textarea placeholder="What's on your mind?" formControlName="content"></textarea>
-          <div class="error-msg" *ngIf="(submitted && !contactForm.controls.content.valid)">Please enter some info</div>
+          <div class="error-msg" style="padding-bottom:6px;" 
+          *ngIf="(submitted && !contactForm.controls.content.valid)"
+          [@slide-in]="true">
+            Please enter some info
+          </div>
+        </div>
+        <div class="input-group required-field-true">
+          <label>I am not a spam bot!</label>
+          <input type="checkbox" value="totally-legit" tabindex="-1" formControlName="agree" />
         </div>
         <div class="button-group">
           <button type="submit" class="primary-color--link">

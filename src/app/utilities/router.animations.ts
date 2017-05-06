@@ -6,17 +6,6 @@ export function fader() {
         state('*', style({ opacity: 1 })),
         transition('void => *', animate('300ms ease-in')
     )]);
-    // return trigger('fader', [
-    //     state('void', style({ transform: 'translateX(-100%)' })),
-    //     //state('*', style({ opacity: 1 })),
-    //     transition('void => *', [
-    //         style({ transform: 'translateX(0)' }),
-    //         animate('500ms ease-in')
-    //     ]),
-    //     transition('* => void', [
-    //         animate('500ms ease-out', style({ transform: 'translateX(100%)' }))
-    //     ])
-    // ]);
 }
 
 export function slideIn() {

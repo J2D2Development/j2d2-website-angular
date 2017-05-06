@@ -9,16 +9,25 @@
     align-items: center;
     background-color: rgba(0, 0, 255, 0.5);
 }
-form {
-    min-width: 100%;
+
+.required-field-true {
+    position: relative !important;
+
+    input, label {
+        position: absolute;
+        left: -150%;
+    }
 }
 .contact {
     display: flex;
     justify-content: space-around;
     padding: 3em 3em 3em 1em;
+    margin-bottom: 1.5em;
     text-align: center;
 
     .contact-main {
+        position: relative;
+        overflow: hidden;
         width: 65%;
         min-width: 65%;
     }
@@ -64,11 +73,14 @@ form {
         .button-group {
             margin-left: 5%;
             display: flex;
+
+            button {
+                margin: 0 1em 0 0;
+            }
         }
 
         button {
             min-width: 75px;
-            margin: 0 1em 0 0;
             cursor: pointer;
             border-radius: 3px;
             font-size: 1.1em;
@@ -81,5 +93,36 @@ form {
     .contact-minor {
         flex-direction: column;
         justify-content: flex-start;
+    }
+}
+
+form {
+    min-width: 100%;
+}
+.form-submitted {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0px auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    h2 {
+        font-weight: normal;
+        margin: 0.5em 0;
+    }
+
+    .btn {
+        margin-top: 0.5em;
     }
 }
