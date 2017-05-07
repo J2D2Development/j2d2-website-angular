@@ -32,7 +32,7 @@ export class ContactComponent implements OnInit {
       'name': ['', Validators.required],
       'email': ['', [Validators.required, Validators.email]],
       'content': ['', Validators.required],
-      'agree': ['']  //named to try to trick spam bots- actually antispam honeypot
+      'agree': [false]  //named to try to trick spam bots- actually antispam honeypot
     });
   }
 
@@ -46,21 +46,22 @@ export class ContactComponent implements OnInit {
     }
 
     if(this.contactForm.valid) {
-        this.showConfirmation = true;
-        // const timestamp = new Date().getTime();
-        // this.existingForms$.push({
-        //     name: data['name'],
-        //     email: data['email'],
-        //     content: data['content'],
-        //     timestamp
-        // })
-        // .then(response => {
-        //     this.showConfirmation = true;
-        // })
-        // .catch(error => {
-        //     console.log('error submitting form');
-        //     //server error- show notice to just send me an email.
-        // });
+        console.log(data);
+        const timestamp = new Date().getTime();
+        this.existingForms$.push({
+            name: data['name'],
+            email: data['email'],
+            content: data['content'],
+            agree: data['agree'],
+            timestamp
+        })
+        .then(response => {
+            this.showConfirmation = true;
+        })
+        .catch(error => {
+            console.log('error submitting form', error);
+            //server error- show notice to just send me an email.
+        });
     } else {
         console.log('invalid form:', this.contactForm);
     }
@@ -69,7 +70,9 @@ export class ContactComponent implements OnInit {
 clearForm() {
     this.submitted = false;
     this.showConfirmation = false;
-    this.contactForm.reset();
+    this.contactForm.reset({
+        agree: false
+    });
 }
 
 }

@@ -1,25 +1,16 @@
 TODO
 
 JOB 1:
-    finish contact form confirmation msg formatting!!!
+    MOBILIFY!!!
 
 -wedding website as example: fix comments section?
     -mysql gone?  try reinstalling?
 
--add link to resume (also; write resume)
-
--form setup
-    -validations:
-        investigate: firebase backend data validation?  maybe on:
-            functions.database.ref('/form_submissions').onWrite(event
-            -is there a 'beforeWrite' hook?  if so, try putting validators there and rejecting if bad submission
-            -fe validation for spam honeypot does nothing (bots can just override js).  need backend check on the checkbox!
-    -set 'view' on this to require login, but 'write' to not (anyone can submit form, only I can view)
-    -http://blog.angular-university.io/angular-2-firebase/
-
 -review/revise about section
 
--MOBILE FRIENDLY
+-grab any remotely linked bg images and put them in assets/images
+
+-loading animation?
 
 -case studies (child routes)
     -on click of button, show study (animate in) and input/event emit header variable for height

@@ -1,5 +1,10 @@
 {
   "rules": {
+    "form_submissions": {
+      "$sub": {
+        ".write": "newData.child('agree').val() == false"
+      }
+    },
     ".read": "auth != null",
     ".write": "auth != null"
   }

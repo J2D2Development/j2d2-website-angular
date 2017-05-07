@@ -13,7 +13,6 @@
     <div class="contact-side contact-main">
       <div *ngIf="showConfirmation" class="form-submitted" [@fader]="true">
         <h2>Thanks for submitting, {{contactForm.controls.name.value}}!</h2>
-        <div>I'll be in touch soon</div>
         <button type="button" class="primary-color--link" (click)="clearForm()">Reset</button>
       </div>
       <form [formGroup]="contactForm" 
