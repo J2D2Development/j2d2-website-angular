@@ -6,36 +6,35 @@
           <i class="devicon-typescript-plain"></i>
           <i class="devicon-nodejs-plain"></i>
           <i class="devicon-jquery-plain"></i>
-          <i class="devicon-d3js-plain"></i>
           <i class="devicon-angularjs-plain"></i>
-          <div>My first and favorite language: Javascript.  I started in web development by stringing together jQuery applications and recently learned to love Angular (and a bit of react).  Being able to write JS on the backend (Node) has really improved my productivity.  Typescript is a great addition to any JS project for more stable, less buggy code.</div>
+          <div>My first and favorite language: Javascript.  I started in web development by stringing together jQuery applications and recently learned to love Angular (and am liking React so far).  Being able to write JS on the backend (Node) has also really improved my productivity.  Typescript is a great addition to any JS project for more stable, less buggy code.</div>
         </div>
         <div *ngIf="language==='css'" class="text-wrapper" [@slide-in]="state">
           <i class="devicon-css3-plain"></i>
           <i class="devicon-bootstrap-plain"></i>
           <i class="devicon-sass-original"></i>
           <i class="devicon-html5-plain"></i>
-          <div>No one ever accused me of being an artist, but knowledge of CSS is a must in the web development world.  Frameworks like Bootstrap help get you started with layout and responsive design.  Preprocessers like SASS are great for modularizing your CSS- which can easily and quickly devolve into a complete mess.</div>
+          <div>No one ever accused me of being an artist, but knowledge of CSS is a must in the web development world.  Frameworks like Bootstrap help get you started with layout and responsive design while preprocessers like SASS are great for modularizing your CSS and avoiding one large, hard to navigate style file.</div>
         </div>
         <div *ngIf="language==='python'" class="text-wrapper" [@slide-in]="state">
           <i class="devicon-python-plain"></i>
           <i class="devicon-django-plain"></i>
-          <div>The combination of Python's simple syntax and powerful nature, along with Django's amazing web framework and ORM make this skill set very useful for getting a well organized, secure backend up and running quickly.</div>
+          <div>The combination of Python's simple syntax and powerful nature, along with Django's amazing web framework and ORM make this skill set very useful for getting a well organized, secure backend for a single page application up and running quickly.  Looking for a more traditional request-response application?  Django's templating engine has that covered too!</div>
         </div>
         <div *ngIf="language==='dotnet'" class="text-wrapper" [@slide-in]="state">
           <i class="devicon-csharp-plain"></i>
           <i class="devicon-dot-net-plain"></i>
-          <div>My new friend- the Microsoft stack.  With the creation of .net core, MS has really moved into present day web development.  It's great for creating descriptive, easy to reason about APIs.  I'm currently working on one in conjunction with a latest generation Angular single page application and they work great together.</div>
+          <div>My new friend- the Microsoft stack.  With the creation of .NET Core, MS has really moved into present day web development.  It's great for creating descriptive, easy to reason about APIs.  I'm currently working on one in conjunction with a latest generation Angular single page application and they work great together!</div>
         </div>
       </div>
       <div class="hero-right">
         <div [@fader-from-left]="true">Joe Driscoll</div>
         <small style="margin-bottom: 1em;" [@fader-delay-from-left]="true">Full Stack Web Developer</small>
         <small>
-          <span on-mouseover="selectLanguage('js')" on-mouseout="selectLanguage('')">JS</span>
-          <span on-mouseover="selectLanguage('css')" on-mouseout="selectLanguage('')">CSS</span> 
-          <span on-mouseover="selectLanguage('python')" on-mouseout="selectLanguage('')">python</span> 
-          <span on-mouseover="selectLanguage('dotnet')" on-mouseout="selectLanguage('')">C#/.net</span>
+          <div class="lang-button" on-mouseover="selectLanguage('js')" on-mouseout="selectLanguage('')">JS</div>
+          <div class="lang-button" on-mouseover="selectLanguage('css')" on-mouseout="selectLanguage('')">CSS</div> 
+          <div class="lang-button" on-mouseover="selectLanguage('python')" on-mouseout="selectLanguage('')">python</div> 
+          <div class="lang-button" on-mouseover="selectLanguage('dotnet')" on-mouseout="selectLanguage('')">C#/.net</div>
         </small>
       </div>
   </div>

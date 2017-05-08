@@ -23,3 +23,9 @@
         border-bottom: 1px solid transparent;
     }
 }
+
+@media(max-width:800px) {
+    .mobile-hide {
+        display: none;
+    }
+}
