@@ -29,8 +29,8 @@
         </div>
       </div>
       <div class="hero-right">
-        Joe Driscoll
-        <small style="margin-bottom: 1em;">Full Stack Web Developer</small>
+        <div [@fader-from-left]="true">Joe Driscoll</div>
+        <small style="margin-bottom: 1em;" [@fader-delay-from-left]="true">Full Stack Web Developer</small>
         <small>
           <span on-mouseover="selectLanguage('js')" on-mouseout="selectLanguage('')">JS</span>
           <span on-mouseover="selectLanguage('css')" on-mouseout="selectLanguage('')">CSS</span> 

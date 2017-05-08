@@ -1,3 +1,19 @@
 :host {
     flex: 1;
 }
+.not-found-bg {
+  background-image: url('../../assets/img/not-found-bg-sm.jpg');
+  background-position: bottom center;
+}
+.screen-white-md {
+    align-items: center;
+}
+.about {
+    padding: 3px 1em 3px 1em;
+    margin: 3em 0 3em 0;
+    text-align: center;
+
+    .about-p:not(:last-child) {
+        margin-bottom: 2em;
+    }
+}

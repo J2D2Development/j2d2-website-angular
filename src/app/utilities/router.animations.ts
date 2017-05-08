@@ -4,7 +4,23 @@ export function fader() {
     return trigger('fader', [
         state('void', style({ opacity: 0 })),
         state('*', style({ opacity: 1 })),
-        transition('void => *', animate('300ms ease-in')
+        transition('void => *', animate('500ms ease-in')
+    )]);
+}
+
+export function faderFromLeft() {
+    return trigger('fader-from-left', [
+        state('void', style({ opacity: 0, transform: 'translateX(-100px)' })),
+        state('*', style({ opacity: 1, transform: 'translateX(0)' })),
+        transition('void => *', animate('500ms')
+    )]);
+}
+
+export function faderDelayFromLeft() {
+    return trigger('fader-delay-from-left', [
+        state('void', style({ opacity: 0, transform: 'translateX(-100px)' })),
+        state('*', style({ opacity: 1, transform: 'translateX(0)' })),
+        transition('void => *', animate('500ms 500ms')
     )]);
 }
 

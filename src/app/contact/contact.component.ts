@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { fader, slideIn } from '../utilities/router.animations';
+import { fader, slideIn, faderFromLeft, faderDelayFromLeft } from '../utilities/router.animations';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
@@ -8,10 +8,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
-  animations: [ fader(), slideIn() ],
-  host: {
-    '[@fader]': 'state'
-  }
+  animations: [ fader(), slideIn(), faderFromLeft(), faderDelayFromLeft() ]
 })
 export class ContactComponent implements OnInit {
   public contactForm: FormGroup;

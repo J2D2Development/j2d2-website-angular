@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { fader } from '../utilities/router.animations';
+import { faderFromLeft, faderDelayFromLeft } from '../utilities/router.animations';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
-  animations: [ fader() ],
-  host: {
-    '[@fader]': 'state'
-  }
+  animations: [ faderFromLeft(), faderDelayFromLeft() ]
 })
 export class ProjectsComponent implements OnInit {
   
