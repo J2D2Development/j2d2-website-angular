@@ -1,68 +1,80 @@
 <div class="container">
-    <h1>The Internal Marketing Backend</h1>
-    <div class="about-p row">
-        <div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-12">
+            <h1>The Internal Marketing Backend</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
             Angular 2 is great.  I can call it that in this case, even though I know that now it's just Angular, because this particular application was created with version 2.0.0-rc.4.  Using any technology that has an "rc" in the version name is risky, but this was just to be an internal application for the marketing team to use- nothing client facing.  We took one prototype for a different app all the way from rc2 up to the current release (at the time of this entry- 4.1.0).  It was quite a journey.
         </div>
     </div>
-    <div class="about-p row">
-        <div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-12">
             But this one was just a simple one screen app.  It probably didn't necessitate a framework, but that decision was left to a higher power.  I was assigned to create the backend.  As it was a single page, single page application, all it really needed to do was return the base route, so I created a simple Express server to do just that.  Why bring in Express for such a simple task?  Initially it was to smooth out tasks for security and serving static files.  It's nice to know that I can thrown in a line for "app.use(helmet())" and provide a good amount of protection with that one line.  Eventually, as the scope grew, I'd be glad I did for other reasons.
         </div>
-        <div class="img-flow img-flow-lg col-sm-12 col-xs-12">
+    </div>
+    <div class="row">
+        <div class="img-flow img-flow-lg col-12">
             <code [innerHTML]="expressBaseRoute"></code>
             <div class="caption">The most basic of base routes- take any request and give back index.html.  Let Angular's router handle the rest.</div>
         </div>
     </div>
-    <div class="about-p row">
-        <div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-12">
             The higher power came to my desk.  "We need this to be password protected and I don't care how you do it."
         </div>
     </div>
-    <div class="about-p row">
-        <div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-12">
             Cool.  I know MongoDB has come under fire a bit, but I thought it was perfect for this simple task.  No sensitive data would be involved anyway, so it seemed like a good choice.  Plus I liked working with Mongo.  I don't generally mind writing SQL queries, but it can be much easier to just check through your object- and tools like Mongoose make it even easier.
         </div>
     </div>
-    <div class="about-p row">
-        <div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-12">
             So the server.js file grew a bit.  Not large enough to require modularization- even with login logic it was only a few routes- but there were some fun complications to figure out.  I imported bcrypt for encryption and created my user-model.js file.  There would be no 'admin' interface, so I just generated accounts via a .js file.  Mongoose lets you create a schema for your data, keeping it more structured and predictable.  Throw in some bcrypt hash/salting magic and you've got the beginning of a pretty good login system.
         </div>
-        <div class="img-flow img-flow-lg col-sm-12 col-xs-12">
+    </div>
+    <div class="row">
+        <div class="img-flow img-flow-lg col-12">
             <code [innerHTML]="mongoSchema"></code>
             <div class="caption">A basic user schema.  Tap into the "save" hook to encrypt your password.  None of this was really necessary, but it sure was fun!</div>
         </div>
     </div>
-    <div class="about-p row">
-        <div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-12">
             The login handler was included on a POST route in the server.  It simply checked the username and password submitted via the front end form on req.body, passed it through a tiny bit of front end validation (repeated with the same function on the backend- thanks Node!), and used Mongo methods like "findOne" to get the user info.
         </div>
-        <div class="img-flow img-flow-lg col-sm-12 col-xs-12">
+    </div>
+    <div class="row">
+        <div class="img-flow img-flow-lg col-12">
             <code [innerHTML]="htmlEntitiesCheck"></code>
             <div class="caption">Used on the client (probably doesn't provide much actual security, as it's easily bypassed) and on the server (not easily bypassed) to replace a couple dangerous characters.  Could be extended for use in a more outward-facing application.</div>
         </div>
     </div>
-    <div class="about-p row">
-        <div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-12">
             A final hurdle: what to do in the event of a reload?  As long as the user doesn't refresh the screen, the loggedIn variable returned as true when they pass the findOne and bcrypt.compare methods stays valid.  But there is no cookie type session.  A refresh or connection interruption would clear the whole "session".  As with most of the tasks on this app- it probably didn't matter.  The site was for internal use, so if a marketing drone had to re-login, no big deal.  But I'd been given the freedom to explore on this project and wanted to figure this out.
         </div>
     </div>
-    <div class="about-p row">
-        <div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-12">
             Side note: while this meant that this particular project took a little longer than was absolutely necessary, the solution ended up being the basis for something we implemented in a production application not to long after.  Sometimes a bit of time spent when you don't have to leads to useful discoveries!
         </div>
     </div>
-    <div class="about-p row">
-        <div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-12">
             Anyway- the solution was to store a JSON Web Token (jwt) in the browser's sessionStorage.  The token included the user's name and an encoded secret key with their unique session id.  Anytime the application did a full reload, Angular's ngOnInit method ran a check to a specific endpoint in our Node code.  If there was a token in the sessionStorage, it would be passed to the backend, decoded (jwt.verify) and if legit, that user would be automatically logged in.  If there was no token, or it was invalid, they'd just go to the login screen.  We're still working on the security best practices of this solution, but it does work quite nicely.
         </div>
-        <div class="img-flow img-flow-lg col-sm-12 col-xs-12">
+    </div>
+    <div class="row">
+        <div class="img-flow img-flow-lg col-12">
             <code [innerHTML]="checkPriorLogin"></code>
             <div class="caption">loginService.checkPriorLogin just sets the proper headers, sends the token to the server using POST, and returns the observable of the result (default with Angular's http method)</div>
         </div>
     </div>
-    <div class="about-p row">
-        <div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-12">
             The login system worked quite well.  The super secret marketing data would be secure from corporate espionage!  In reality, we probably could have just set up a JS object with username = admin and password = password and been ok, but the techniques learned and tested on this grew and made their way into multiple other applications.
         </div>
     </div>

@@ -15,49 +15,53 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-/*GRID SYSTEM*/
-//experiment with css-grid.  if works, move to main style and make responsive
-.container {
-    margin: 0px auto;
-    padding: 0 1em 0 1em;
-}
-.about-p {
-  margin-bottom: 2em;
-}
+/*GRID SYSTEM:
+  experiment with css-grid.  if works, move to main style and make responsive
+  UPDATE: doesn't really work in ie/edge, removing for now
+*/
+// .container {
+//     margin: 0px auto;
+//     padding: 0 1em 0 1em;
+// }
+// .about-p {
+//   margin-bottom: 2em;
+// }
 
-.row {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 16px;
-}
+// .row {
+//     display: -ms-grid;
+//     display: grid;
+//     -ms-grid-columns: repeat(12, 1fr);
+//     grid-template-columns: repeat(12, 1fr);
+//     grid-gap: 16px;
+// }
 
-.col-xs-12 {
-    grid-column: span 12;
-}
-.col-sm-3 {
-    grid-column: span 3;
-}
-.col-sm-4 {
-    grid-column: span 4;
-}
-.col-sm-5 {
-    grid-column: span 5;
-}
-.col-sm-6 {
-    grid-column: span 6;
-}
-.col-sm-7 {
-    grid-column: span 7;
-}
-.col-sm-8 {
-    grid-column: span 8;
-}
-.col-sm-9 {
-    grid-column: span 9;
-}
-.col-sm-12 {
-    grid-column: span 12;
-}
+// .col-xs-12 {
+//     grid-column: span 12;
+// }
+// .col-sm-3 {
+//     grid-column: span 3;
+// }
+// .col-sm-4 {
+//     grid-column: span 4;
+// }
+// .col-sm-5 {
+//     grid-column: span 5;
+// }
+// .col-sm-6 {
+//     grid-column: span 6;
+// }
+// .col-sm-7 {
+//     grid-column: span 7;
+// }
+// .col-sm-8 {
+//     grid-column: span 8;
+// }
+// .col-sm-9 {
+//     grid-column: span 9;
+// }
+// .col-sm-12 {
+//     grid-column: span 12;
+// }
 
 .img-flow {
     padding: 16px;
@@ -454,6 +458,118 @@ code {
 }
 
 
+// SIMPLE GRID - SASS/SCSS (modified for grid only)
+// utility
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.justify {
+  text-align: justify;
+}
+.hidden-sm {
+  display: none;
+}
+
+// grid (modified version of http://simplegrid.io/ - very cool, very basic grid supported by many browsers)
+$width: 96%;
+$gutter: 4%;
+$breakpoint-small: 33.75em; // 540px
+$breakpoint-med: 45em; // 720px
+$breakpoint-large: 60em; // 960px
+
+.container {
+  // width: 90%;
+  // margin-left: auto;
+  // margin-right: auto;
+
+  // @media only screen and (min-width: $breakpoint-small) {
+  //   width: 80%;
+  // }
+
+  // @media only screen and (min-width: $breakpoint-large) {
+  //   width: 75%;
+  //   max-width: 60rem;
+  // }
+}
+
+.row {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.row:last-child {
+  margin-bottom: 3em;
+}
+
+.row [class^="col"] {
+  float: left;
+  margin: 0.5rem 2%;
+  min-height: 0.125rem;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  width: $width;
+}
+
+.col-1-sm { width:($width / 12) - ($gutter * 11 / 12); }
+.col-2-sm { width: ($width / 6) - ($gutter * 10 / 12); }
+.col-3-sm { width: ($width / 4) - ($gutter * 9 / 12); }
+.col-4-sm { width: ($width / 3) - ($gutter * 8 / 12); }
+.col-5-sm { width: ($width / (12 / 5)) - ($gutter * 7 / 12); }
+.col-6-sm { width: ($width / 2) - ($gutter * 6 / 12); }
+.col-7-sm { width: ($width / (12 / 7)) - ($gutter * 5 / 12); }
+.col-8-sm { width: ($width / (12 / 8)) - ($gutter * 4 / 12); }
+.col-9-sm { width: ($width / (12 / 9)) - ($gutter * 3 / 12); }
+.col-10-sm { width: ($width / (12 / 10)) - ($gutter * 2 / 12); }
+.col-11-sm { width: ($width / (12 / 11)) - ($gutter * 1 / 12); }
+.col-12-sm { width: $width; }
+
+@media only screen and (min-width: $breakpoint-med) {
+  .col-1 { width:($width / 12) - ($gutter * 11 / 12); }
+  .col-2 { width: ($width / 6) - ($gutter * 10 / 12); }
+  .col-3 { width: ($width / 4) - ($gutter * 9 / 12); }
+  .col-4 { width: ($width / 3) - ($gutter * 8 / 12); }
+  .col-5 { width: ($width / (12 / 5)) - ($gutter * 7 / 12); }
+  .col-6 { width: ($width / 2) - ($gutter * 6 / 12); }
+  .col-7 { width: ($width / (12 / 7)) - ($gutter * 5 / 12); }
+  .col-8 { width: ($width / (12 / 8)) - ($gutter * 4 / 12); }
+  .col-9 { width: ($width / (12 / 9)) - ($gutter * 3 / 12); }
+  .col-10 { width: ($width / (12 / 10)) - ($gutter * 2 / 12); }
+  .col-11 { width: ($width / (12 / 11)) - ($gutter * 1 / 12); }
+  .col-12 { width: $width; }
+
+  .hidden-sm {
+    display: block;
+  }
+}
+
+
 
 /*phones*/
 // @media (max-width: 34em) {
@@ -631,9 +747,11 @@ code {
 
   /*grid system experimenting
     for testing- at this width, just have it display as one column
+    -this doesn't seem to work at all in Edge/IE, even with vendor prefixing.
+    scrapping for now in favor of traditional float grid system.
   */
-  .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
-  .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
-      grid-column: span 12;
-  }
+  // .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
+  // .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+  //     grid-column: span 12;
+  // }
 }
