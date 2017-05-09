@@ -1,6 +1,7 @@
 $primary-color: #156cbe;
 $primary-color-accent: #333;
 $comp-color: #be6715;
+$light-blue: #ACCFCC;
 
 * {
   box-sizing: border-box;
@@ -33,7 +34,6 @@ body {
 .col-xs-12 {
     grid-column: span 12;
 }
-
 .col-sm-3 {
     grid-column: span 3;
 }
@@ -61,7 +61,7 @@ body {
 
 .img-flow {
     padding: 16px;
-    margin: 0 16px 0 16px;
+    margin: 0 1em 0 1em;
     background-color: rgba(0,0,0,0.1);
     border-radius: 5px;
     display: flex;
@@ -78,7 +78,7 @@ body {
 }
 
 .header-sticky {
-  z-index: 9999;
+  z-index: 9990;
   width: 100%;
   font-size: 1.25em;
   padding: 16px 0 16px 0;
@@ -91,7 +91,7 @@ body {
   transition: all 0.3s linear;
 }
 .header {
-  z-index: 9999;
+  z-index: 9990;
   width: 100%;
   padding: 16px 0 16px 0;
   color: #eee;
@@ -277,7 +277,7 @@ h1 {
   color: #eee;
   width: 100%;
   font-size: 1.25em;
-  padding: 26px 0 26px 0px;
+  padding: 1em 0 1em 0px;
 }
 
 .footer-dark--wrapper {
@@ -433,15 +433,120 @@ code {
   color: palegoldenrod;
   padding: 1em;
   border-radius: 5px;
+  overflow-x: auto;
+}
+.full-cover-bg-screen {
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transition: transform 0.3s ease;
+}
+.bg-screen-show {
+  transform: translateX(0);
+}
+.bg-screen-hide {
+  transform: translateX(-100%);
 }
 
 
-/*mobile*/
 
-@media (max-width: 700px) {
+/*phones*/
+// @media (max-width: 34em) {
+//   .mobile-menu-wrapper {
+//     display: flex;
+//     position: relative;
+//     overflow: hidden;
+//   }
+//   .mobile-hide {
+//     display: none;
+//   }
+//   .mobile-show-block {
+//     display: block;
+//   }
+//   .mobile-show-flex {
+//     display: flex;
+//   }
+//   .mobile-menu {
+//     position: fixed;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     width: 33%;
+//     min-width: 200px;
+//     min-height: 100%;
+//     background-color: $light-blue;
+//     padding: 0;
+//     transition: transform 0.3s ease;
+//   }
+//   .mobile-menu-hide {
+//     transform: translateX(100%);
+//   }
+//   .mobile-menu-show {
+//     transform: translateX(0);
+//   }
+//   .mobile-menu a {
+//     margin: 0;
+//   }
+//   .mobile-menu li {
+//     display: block;
+//     margin: 6px 0 0 0;
+//   }
+//   #mobile-show {
+//     z-index: 9999;
+//   }
+//   h1 {
+//     font-size: 1.5em;
+//   }
+//   .screen-white-lg {
+//     font-size: 2.5em;
+//     background-color: rgba(0, 0, 255, 0.5);
+//   }
+//   .featured {
+//     display: block;
+//   }
+//   .featured-col {
+//     width: 100%;
+//     border-bottom: 1px solid #ccc;
+//     margin-bottom: 15px;
+//     box-shadow: none;
+//   }
+//   .img-flow {
+//     margin: 0 0 0 0;
+//   }
+//   .img-flow-lg {
+//     width: 100%;
+//   }
+//   .contact {
+//     display: block;
+//   }
+//   .contact-text {
+//     width: 100%;
+//     margin-bottom: 32px;
+//   }
+//   .contact-form {
+//     width: 100%;
+//   }
+//   .footer-dark--wrapper {
+//     display: block;
+//     text-align: center;
+//   }
+//   .footer-right {
+//     text-align: center;
+//     margin: 16px 0 16px 0;
+//   }
+// }
+
+/*medium width - tablets*/
+@media (max-width: 48em) {
   .mobile-menu-wrapper {
     display: flex;
     position: relative;
+    text-align: right;
   }
   .mobile-hide {
     display: none;
@@ -452,25 +557,33 @@ code {
   .mobile-show-flex {
     display: flex;
   }
-  .mobile-menu-hide {
-    display: none;
-  }
   .mobile-menu {
     position: fixed;
-    left: 0;
+    top: 0;
+    bottom: 0;
     right: 0;
-    top: 2.5em;
-    width: 100%;
-    background-color: #fff;
+    width: 35%;
+    min-width: 200px;
+    min-height: 100%;
+    background-color: $light-blue;
+    color: $primary-color-accent;
     padding: 0;
+    transition: transform 0.3s ease;
   }
-  .menu-mobile-show {}
+  .mobile-menu-hide {
+    transform: translateX(100%);
+  }
+  .mobile-menu-show {
+    transform: translateX(0);
+  }
   .mobile-menu a {
     margin: 0;
+    display: block;
+    width: 100%;
   }
   .mobile-menu li {
     display: block;
-    margin: 6px 0 0 0;
+    margin: 1em 0 0 0;
   }
   #mobile-show {
     z-index: 9999;
@@ -491,6 +604,12 @@ code {
     margin-bottom: 15px;
     box-shadow: none;
   }
+  .img-flow {
+    margin: 0 0 0 0;
+  }
+  .img-flow-lg {
+    width: 100%;
+  }
   .contact {
     display: block;
   }
@@ -507,6 +626,14 @@ code {
   }
   .footer-right {
     text-align: center;
-    margin: 16px 0 16px 0;
+    margin: 6px 0 6px 0;
+  }
+
+  /*grid system experimenting
+    for testing- at this width, just have it display as one column
+  */
+  .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
+  .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+      grid-column: span 12;
   }
 }

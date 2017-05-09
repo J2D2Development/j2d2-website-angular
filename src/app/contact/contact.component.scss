@@ -126,3 +126,33 @@ form {
         margin-top: 0.5em;
     }
 }
+
+/*small width - phones*/
+@media (max-width: 34em) {
+    .error-msg {
+        bottom: inherit;
+        top: -5px;
+    }
+}
+
+/*medium width - tablets*/
+@media (max-width: 48em) {
+    .contact {
+        display: block;
+        margin-bottom: 0;
+        padding: 1em;
+
+        .contact-main {
+            width: 100%;
+            min-width: 100%;
+        }
+
+        .contact-side {
+            margin-bottom: 3em;
+
+            .input-group {
+                min-width: 100%;
+            }
+        }
+    }
+}

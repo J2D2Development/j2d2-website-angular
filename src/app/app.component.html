@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://j2d2development.wordpress.com/">
+                <a href="https://j2d2development.wordpress.com/" target="_blank">
                     Blog
                 </a>
             </li>
@@ -35,21 +35,44 @@
         </ul>
 
         <div class="mobile-menu-wrapper">
-        <i id="menu-show" class="fa fa-bars mobile-show-flex" aria-hidden="true"></i>
-        <ul class="mobile-menu mobile-menu-hide">
-            <li>About</li>
-            <li>Work</li>
-            <li>
-            <a href="https://j2d2development.wordpress.com/">
-            Blog
-        </a>
-            </li>
-            <li>
-            <a href="#contact">
-            Contact
-        </a>
-            </li>
-        </ul>
+            <i id="menu-show" class="fa fa-2x fa-bars mobile-show-flex" aria-hidden="true" (click)="toggleMenu()"></i>
+            <ul class="mobile-menu {{menuIsOpen ? 'mobile-menu-show' : 'mobile-menu-hide'}}">
+                <li>
+                    <a (click)="toggleMenu()">
+                        <i class="fa fa-2x fa-times" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/" (click)="toggleMenu()">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/about"(click)="toggleMenu()">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/projects" (click)="toggleMenu()">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/cases" (click)="toggleMenu()">
+                        Case Studies
+                    </a>
+                </li>
+                <li>
+                    <a href="https://j2d2development.wordpress.com/" target="_blank" (click)="toggleMenu()">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/contact" (click)="toggleMenu()">
+                        Contact
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </header>
@@ -75,3 +98,4 @@
         </div>
     </div>
 </footer>
+<div class="full-cover-bg-screen {{menuIsOpen ? 'bg-screen-show' : 'bg-screen-hide'}}" (click)="toggleMenu()"></div>

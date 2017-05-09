@@ -7,5 +7,9 @@ import { Router, RouterLinkActive } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+    menuIsOpen: boolean = false;
+
+    toggleMenu() {
+        this.menuIsOpen = this.menuIsOpen ? false : true;
+    }
 }

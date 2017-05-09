@@ -2,15 +2,15 @@ TODO
 
 JOB 1:
     MOBILIFY!!!
+        ie and edge: css grid fallback/vendors?  otherwise, just try flexbox and vendor tags
+        cases (need animation to top of story on click- and animation overall on cases full width)
+
+on route change: scroll to top
+
+-mobile: fix bg images (or remove)
 
 -wedding website as example: fix comments section?
     -mysql gone?  try reinstalling?
-
--review/revise about section
-
--case studies (child routes)
-    -on click of button, show study (animate in) and input/event emit header variable for height
-    -review/revise content
 
 
 FUTURE PROJECTS
