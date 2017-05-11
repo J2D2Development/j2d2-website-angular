@@ -324,6 +324,15 @@ h1 {
   color: inherit;
 }
 
+/*case studies*/
+// .case-abs {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   border: 1px solid blue;
+// }
+
 
 /*Utility classes*/
 
@@ -341,6 +350,15 @@ hr {
 }
 .error-field {
   border-color: $comp-color;
+}
+
+.fa-window-close {
+  color: $comp-color;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.fa-window-close:hover {
+  opacity: 1;
 }
 
 .subheader {
@@ -430,7 +448,8 @@ hr {
     text-align: left;
 }
 .active-button-primary {
-  background-color: #333;
+  background-color: #2c7ac4;
+  color: #fff;
 }
 code {
   background-color: #333;

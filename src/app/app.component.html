@@ -76,7 +76,7 @@
         </div>
     </div>
 </header>
-<router-outlet></router-outlet>
+<router-outlet (activate)="generalService.scrollToTop()"></router-outlet>
 <footer class="footer-dark">
     <div class="footer-dark--wrapper">
         <div class="footer-left">

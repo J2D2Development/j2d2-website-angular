@@ -12,8 +12,9 @@ import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { AngularFireModule } from 'angularfire2';
-import { ENV_VARS } from '../config';
+import { GeneralService } from './utilities/general.service';
 
+import { ENV_VARS } from '../config';
 import { routing } from './app.routes';
 
 export const firebaseConfig = {
@@ -43,7 +44,9 @@ export const firebaseConfig = {
     routing,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [
+    GeneralService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

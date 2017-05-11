@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { CasesService } from './cases.service';
+
+import { faderToggle } from '../utilities/router.animations';
+import { GeneralService } from '../utilities/general.service';
 
 @Component({
-  templateUrl: './sub-component-templates/casetwo.html'
+  templateUrl: './sub-component-templates/casetwo.html',
+  animations: [ faderToggle() ]
 })
 export class CaseTwoComponent implements OnInit {
     googleFormSnippet: string = `$(document).ready(function() {<br />
@@ -31,9 +36,17 @@ export class CaseTwoComponent implements OnInit {
         &nbsp;&nbsp;&nbsp;&nbsp;echo 'success!';<br />
     }`;
 
-  constructor() { }
+  constructor(
+    public casesService: CasesService,
+    public generalService: GeneralService
+  ) { }
 
   ngOnInit() {
+    this.casesService.updatePreviewBarState('shrunk');
+  }
+
+  updatePreviewBarState(state): void {
+    this.casesService.updatePreviewBarState(state);
   }
 
 

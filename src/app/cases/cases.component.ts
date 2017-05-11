@@ -1,32 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { faderFromLeft, faderDelayFromLeft } from '../utilities/router.animations';
+import { faderFromLeft, faderDelayFromLeft, shrinkUp } from '../utilities/router.animations';
+import { CasesService } from './cases.service';
 
 @Component({
   selector: 'app-cases',
   templateUrl: './cases.component.html',
   styleUrls: ['./cases.component.scss'],
-  animations: [ faderFromLeft(), faderDelayFromLeft() ]
+  animations: [ faderFromLeft(), faderDelayFromLeft(), shrinkUp() ]
 })
 export class CasesComponent implements OnInit {
-  alterHeader: string = '';
-  alterSidebar: string = '';
-  hideDetails: string = '';
 
-  constructor() { }
+  constructor(
+    public casesService: CasesService
+  ) { }
 
   ngOnInit() {
-    //this.updateUI(true);
+    this.casesService.updatePreviewBarState('full');
   }
 
-  updateUI(revert?: boolean) {
-    // if(revert) {
-    //   this.alterHeader = '';
-    //   this.alterSidebar = '';
-    //   this.hideDetails = '';
-    // } else {
-    //   this.alterHeader = 'alter-header';
-    //   this.alterSidebar = 'alter-sidebar';
-    //   this.hideDetails = 'hide-details';
-    // }
+  updatePreviewBarState(state): void {
+    this.casesService.updatePreviewBarState(state);
   }
 }

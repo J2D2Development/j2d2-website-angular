@@ -1,7 +1,12 @@
-<div class="container">
+<div class="container" [@fader-toggle]="true">
     <div class="row">
-        <div class="col-12">
+        <div class="col-10">
             <h1>The Internal Marketing Backend</h1>
+        </div>
+        <div class="col-2 right">
+            <i class="fa fa-2x fa-window-close" aria-hidden="true"
+                (click)="updatePreviewBarState('full')" routerLink="/cases"
+            ></i>
         </div>
     </div>
     <div class="row">

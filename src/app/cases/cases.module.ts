@@ -5,6 +5,7 @@ import { CaseOneComponent } from './caseone.component';
 import { CaseTwoComponent } from './casetwo.component';
 import { CaseThreeComponent } from './casethree.component';
 import { CasesRouting } from './cases.routes';
+import { CasesService } from './cases.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,9 @@ import { CasesRouting } from './cases.routes';
       CaseOneComponent,
       CaseTwoComponent,
       CaseThreeComponent
+  ],
+  providers: [
+    CasesService
   ]
 })
 export class CasesModule { }

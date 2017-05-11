@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { CasesService } from './cases.service';
+
+import { faderToggle } from '../utilities/router.animations';
+import { GeneralService } from '../utilities/general.service';
 
 @Component({
-  templateUrl: './sub-component-templates/casethree.html'
+  templateUrl: './sub-component-templates/casethree.html',
+  animations: [ faderToggle() ]
 })
 export class CaseThreeComponent implements OnInit {
   redirectExample: string = `def old_url_redirects(request, path):<br />
@@ -57,9 +62,17 @@ export class CaseThreeComponent implements OnInit {
       });
       `;
 
-  constructor() { }
+  constructor(
+    public casesService: CasesService,
+    public generalService: GeneralService
+  ) { }
 
   ngOnInit() {
+    this.casesService.updatePreviewBarState('shrunk');
+  }
+
+  updatePreviewBarState(state): void {
+    this.casesService.updatePreviewBarState(state);
   }
 
 }

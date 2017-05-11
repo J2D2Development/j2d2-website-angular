@@ -9,6 +9,15 @@
 }
 .featured-col {
   margin-bottom: 2.5em;
+
+    h2 {
+      margin-bottom: 0;
+
+      small {
+        display: block;
+        font-size: 0.65em;
+      }
+    }
 }
 .case-details-wrapper {
   flex: 1;
@@ -18,28 +27,13 @@
   justify-content: space-between;
   align-items: center;
 }
-.featured-col h2 small {
-  display: block;
-  font-size: 0.65em;
-}
 
 .featured-col--text {
   font-size: 0.85em;
   opacity: 1;
-  max-height: 600px;
-  transition: all 0.5s ease;
+  margin: 1.25em 0 1.75em 0;
 }
-.alter-header {
-  min-height: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-.alter-sidebar {
+
+.primary-color--link {
   margin-top: 0;
-  margin-bottom: 0.5em;
-  box-shadow: 0 0 0 0 transparent;
-}
-.hide-details {
-  opacity: 0;
-  max-height: 0;
 }

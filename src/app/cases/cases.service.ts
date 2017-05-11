@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-
 @Injectable()
 export class CasesService {
-    private test;
+    previewBarState: string = 'full';
+
+    updatePreviewBarState(state): void {
+        this.previewBarState = state;
+    }
 }

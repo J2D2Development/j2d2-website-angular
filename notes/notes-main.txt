@@ -1,10 +1,8 @@
 TODO
 
-JOB 1:
-    MOBILIFY!!!
-        cases (need animation to top of story on click- and animation overall on cases full width)
-
 on route change: scroll to top
+
+bottom of case study: add 'close' button, also on scroll certain len, show a 'to top' button
 
 -mobile: fix bg images (or remove)
 
@@ -13,6 +11,9 @@ on route change: scroll to top
 
 
 FUTURE PROJECTS
+
+-case study animation
+    -switch shrinkUp to multi step: first fade out text, then shrink/maxheight/remove margins.  reverse this on grow
 
 -visuals
     -link hover slide underline effect (was on twitter, now try http://stackoverflow.com/questions/34028802/transition-sliding-underline-jumping)

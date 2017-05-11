@@ -8,6 +8,15 @@ export function fader() {
     )]);
 }
 
+export function faderToggle() {
+    return trigger('fader-toggle', [
+        state('*', style({ opacity: 1 })),
+        state('void', style({ opacity: 0 })),
+        transition('void => *', animate('600ms 300ms ease-in')),
+        transition('* => void', animate('600ms ease-out'))
+    ]);
+}
+
 export function faderFromLeft() {
     return trigger('fader-from-left', [
         state('void', style({ opacity: 0, transform: 'translateX(-100px)' })),
@@ -33,5 +42,14 @@ export function slideIn() {
       transition('* => void', [
           animate('500ms ease-out', style({ transform: 'translateY(80%)', opacity: 0 }))
       ])
+    ]);
+}
+
+export function shrinkUp() {
+    return trigger('shrink-up', [
+        state('shrunk', style({ opacity: 0, transform: 'scaleY(0)', maxHeight: '0px', marginTop: '6px', marginBottom: 0 })),
+        state('full', style({ opacity: 1, transform: 'scaleY(1)', maxHeight: '500px' })),
+        transition('full => shrunk', animate('500ms ease')),
+        transition('shrunk => full', animate('500ms ease'))
     ]);
 }
