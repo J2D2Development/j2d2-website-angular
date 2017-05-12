@@ -1,5 +1,7 @@
 TODO
 
+PLUG IN DOMAIN (google won't recognize 2nd fucking a record- try again later)
+
 on route change: scroll to top
 
 bottom of case study: add 'close' button, also on scroll certain len, show a 'to top' button
