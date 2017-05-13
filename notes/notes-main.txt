@@ -1,10 +1,6 @@
 TODO
 
-on route change: scroll to top
-
 bottom of case study: add 'close' button, also on scroll certain len, show a 'to top' button
-
--mobile: fix bg images (or remove)
 
 -wedding website as example: fix comments section?
     -mysql gone?  try reinstalling?

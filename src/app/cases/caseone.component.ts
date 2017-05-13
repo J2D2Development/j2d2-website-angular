@@ -36,8 +36,8 @@ export class CaseOneComponent implements OnInit {
     &nbsp;&nbsp;&nbsp;&nbsp;});<br />
   });<br />`;
   
-  htmlEntitiesCheck: string = `function htmlEntities(str) {<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');<br />
+  htmlEntitiesCheck: string = `function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }`;
   
   checkPriorLogin: string = `ngOnInit() {<br />
