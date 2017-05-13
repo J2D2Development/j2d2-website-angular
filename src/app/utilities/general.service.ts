@@ -6,7 +6,19 @@ export class GeneralService {
   constructor() { }
 
   scrollToTop() {
-    console.log('shared scrol to top');
+    window.scrollTo(0, 0);
+  }
+
+  scrollToPosition(element) {
+    //scroll to element
+  }
+
+  getCurrentYPosition() {
+    //current position on screen
+  }
+
+  getElementYPosition(element) {
+    //position to scroll to
   }
 
 }

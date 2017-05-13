@@ -1,4 +1,4 @@
-<div class="container" [@fader-toggle]="true">
+<div class="container container-add-padding" [@fader-toggle]="true">
     <div class="row">
         <div class="col-10">
             <h1>The Integration Project</h1>
@@ -73,9 +73,13 @@
             This project is currently undergoing another rewrite.  That's the thing about software- it's never really "done".  In this case, we are updating to latest generation Angular (which I'm loving) and turning our cobbled together Django backend into a more API driven architecture.  This should address the main issues with the current site- load times and maintainability.  Latest gen Angular has really improved the process of packaging an application for production.  And our team has learned a lot about integrating Django with Angular- which should mean we can rewrite a lot of those "clever" solutions to something a lot more simple and easy to update/maintain.
         </div>
     </div>
-    <!--<div class="row">
-        <div class="col-12">
-            The current version can be found at <a href="http://www.mimics.com" target="_blank">mimics.com</a> - new version coming soon!
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button class="primary-color--link link-lg" (click)="updatePreviewBarState('full')" routerLink="/cases">
+                Close Story
+            </button>
         </div>
-    </div>-->
+        <div class="col-4"></div>
+    </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="container" [@fader-toggle]="true">
+<div class="container container-add-padding" [@fader-toggle]="true">
     <div class="row">
         <div class="col-10">
             <h1>The Internal Marketing Backend</h1>
@@ -82,5 +82,14 @@
         <div class="col-12">
             The login system worked quite well.  The super secret marketing data would be secure from corporate espionage!  In reality, we probably could have just set up a JS object with username = admin and password = password and been ok, but the techniques learned and tested on this grew and made their way into multiple other applications.
         </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button class="primary-color--link link-lg" (click)="updatePreviewBarState('full')" routerLink="/cases">
+                Close Story
+            </button>
+        </div>
+        <div class="col-4"></div>
     </div>
 </div>

@@ -1,7 +1,5 @@
 TODO
 
-PLUG IN DOMAIN (google won't recognize 2nd fucking a record- try again later)
-
 on route change: scroll to top
 
 bottom of case study: add 'close' button, also on scroll certain len, show a 'to top' button
@@ -33,10 +31,3 @@ TIPS/TRICKS
     git pull origin master
     git merge test
     git push origin master
-
-
-LEARNING
-
-https://12factor.net/port-binding
-
-https://github.com/ryanmcdermott/clean-code-javascript

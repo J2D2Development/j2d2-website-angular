@@ -1,4 +1,4 @@
-<div class="container" [@fader-toggle]="true">
+<div class="container container-add-padding" [@fader-toggle]="true">
     <div class="row">
         <div class="col-10">
             <h1>The Wedding Website</h1>
@@ -65,5 +65,14 @@
         <div class="col-12">
             The site is still up at <a href="http://www.driscollwedding.com" target="_blank">driscollwedding.com</a> as a historical record.  The RSVP form is no longer active (I think you can submit, but it won't go anywhere), but the rest should run just fine.  The biggest lesson learned: you can set up a server yourself, but it might take quite a bit of time and a whole lot of frustration.
         </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <button class="primary-color--link link-lg" (click)="updatePreviewBarState('full')" routerLink="/cases">
+                Close Story
+            </button>
+        </div>
+        <div class="col-4"></div>
     </div>
 </div>

@@ -71,7 +71,7 @@ export class CaseThreeComponent implements OnInit {
     this.casesService.updatePreviewBarState('shrunk');
   }
 
-  updatePreviewBarState(state): void {
+  updatePreviewBarState(state: string): void {
     this.casesService.updatePreviewBarState(state);
   }
 
