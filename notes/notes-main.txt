@@ -1,6 +1,8 @@
 TODO
 
-bottom of case study: add 'close' button, also on scroll certain len, show a 'to top' button
+bottom of case study: on scroll certain len, show a 'to top' button
+
+preload bg images for all routes when app loads?  see app.component for issues!
 
 -wedding website as example: fix comments section?
     -mysql gone?  try reinstalling?
