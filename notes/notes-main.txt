@@ -2,6 +2,12 @@ TODO
 
 bottom of case study: on scroll certain len, show a 'to top' button
 
+add data validation: firebase rules
+
+when case study opens, scroll to the h1 tag (delay?  smooth?)
+
+-mobile menu: stick to top on scroll down
+
 preload bg images for all routes when app loads?  see app.component for issues!
 
 -wedding website as example: fix comments section?
