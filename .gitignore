@@ -35,6 +35,7 @@ src/config.js
 /coverage/*
 /libpeerconnection.log
 npm-debug.log
+*.docx
 testem.log
 /typings
 
