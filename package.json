@@ -4,8 +4,8 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "build": "ng build --prod --env=prod --aot",
-    "deploy": "ng build --prod --env=prod --aot && firebase deploy",
+    "build": "ng build --prod --output-hashing=bundles",
+    "deploy": "npm run build && firebase deploy",
     "ng": "ng",
     "start": "ng serve --open",
     "test": "ng test",

@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "j2d2": "j2d2-website-angular"
+  }
+}
