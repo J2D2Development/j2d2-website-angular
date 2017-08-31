@@ -3,6 +3,27 @@
     flex-direction: column;
     flex: 1;
 }
+.home-bg {
+    position: fixed;
+    top: 0;
+    // left: -250%;
+    // width: 500%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, #2da9d7, #212a3e);
+    //animation: 10s linear infinite alternate home-bg-animation;
+}
+
+@keyframes home-bg-animation {
+    0%, 10% {
+        transform: translateX(0);
+    }
+    90%, 100% {
+        transform: translateX(50%);
+    }
+}
+
 .hero-left {
     width: 45%;
     min-height: 200px;

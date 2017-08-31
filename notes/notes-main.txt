@@ -1,5 +1,7 @@
 TODO
 
+homepage background- animating gradient didn't really work.  next: try full size canvas bg and make a nice random js shape generator?
+
 bottom of case study: on scroll certain len, show a 'to top' button
 
 add data validation: firebase rules
